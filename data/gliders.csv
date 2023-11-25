@@ -1,16 +1,5 @@
 Name,GroundSpeed,WaterSpeed,AirSpeed,AntiGravitySpeed,Acceleration,Weight,GroundHandling,WaterHandling,AirHandling,AntiGravityHandling,Traction,MiniTurbo,Invincibility
-Cloud Glider,0,1,1,1,2,0,1,0,2,1,1,2,0
-Parachute,0,1,1,1,2,0,1,0,2,1,1,2,0
-Flower Glider,0,1,1,1,2,0,1,0,2,1,1,2,0
-Paper Glider,0,1,1,1,2,0,1,0,2,1,1,2,0
-Peach Parasol,0,0,1,1,2,1,1,1,2,0,0,2,0
-Parafoil,0,0,1,1,2,1,1,1,2,0,0,2,0
-Bowser Kite,0,0,1,1,2,1,1,1,2,0,0,2,0
-MKTV Parafoil,0,0,1,1,2,1,1,1,2,0,0,2,0
-Wario Wing,1,0,2,1,1,2,1,1,1,0,0,1,1
-Plane Glider,1,0,2,1,1,2,1,1,1,0,0,1,1
-Gold Glider,1,0,2,1,1,2,1,1,1,0,0,1,1
-Paraglider,1,0,2,1,1,2,1,1,1,0,0,1,1
-Super Glider,1,1,2,0,1,1,1,0,1,1,1,1,1
-Waddle Wing,1,1,2,0,1,1,1,0,1,1,1,1,1
-Hylian Kite,1,1,2,0,1,1,1,0,1,1,1,1,1
+Paper Glider | Flower Glider | Parachute | Cloud Glider,0,1,1,1,2,0,1,0,2,1,1,2,0
+MKTV Parafoil | Bowser Kite | Parafoil | Peach Parasol,0,0,1,1,2,1,1,1,2,0,0,2,0
+Paraglider | Gold Glider | Plane Glider | Wario Wing,1,0,2,1,1,2,1,1,1,0,0,1,1
+Hylian Kite | Waddle Wing | Super Glider,1,1,2,0,1,1,1,0,1,1,1,1,1

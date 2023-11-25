@@ -1,42 +1,28 @@
 Name,GroundSpeed,WaterSpeed,AirSpeed,AntiGravitySpeed,Acceleration,Weight,GroundHandling,WaterHandling,AirHandling,AntiGravityHandling,Traction,MiniTurbo,Invincibility,IsInwardDrift
-Biddybuggy,0,1,1,2,7,0,5,4,4,5,4,7,0,False
-Mr. Scooty,0,1,1,2,7,0,5,4,4,5,4,7,0,False
+Mr. Scooty | Biddybuggy,0,1,1,2,7,0,5,4,4,5,4,7,0,False
 Streetle,2,5,2,0,6,0,4,5,3,2,6,6,3,False
 Landship,2,5,2,0,6,0,4,5,3,2,6,6,2,False
 Pipe Frame,2,3,1,1,6,1,5,4,2,4,4,6,3,False
-Varmint,2,3,1,1,6,1,5,4,2,4,4,6,2,False
-City Tripper,2,3,1,1,6,1,5,4,2,4,4,6,2,False
+City Tripper | Varmint,2,3,1,1,6,1,5,4,2,4,4,6,2,False
 Cat Cruiser,2,2,4,3,5,2,4,2,4,3,3,6,3,False
-Comet,2,2,4,3,5,2,4,2,4,3,3,6,2,True
-Yoshi Bike,2,2,4,3,5,2,4,2,4,3,3,6,2,True
+Yoshi Bike | Comet,2,2,4,3,5,2,4,2,4,3,3,6,2,True
 Teddy Buggy,2,2,4,3,5,2,4,2,4,3,3,6,1,False
-W 25 Silver Arrow,2,2,3,4,5,1,4,3,3,4,5,5,4,False
-Standard Bike,2,2,3,4,5,1,4,3,3,4,5,5,4,False
-Flame Rider,2,2,3,4,5,1,4,3,3,4,5,5,4,False
-Wild Wiggler,2,2,3,4,5,1,4,3,3,4,5,5,4,False
-Mach 8,3,3,4,5,3,3,2,2,2,4,4,5,3,False
-Sports Coupe,3,3,4,5,3,3,2,2,2,4,4,5,3,False
+Wild Wiggler | Flame Rider | Standard Bike | W 25 Silver Arrow,2,2,3,4,5,1,4,3,3,4,5,5,4,False
+Sports Coupe | Mach 8,3,3,4,5,3,3,2,2,2,4,4,5,3,False
 Inkstriker,3,3,4,5,3,3,2,2,2,4,4,5,1,False
 Tanooki Kart,3,4,3,3,2,3,4,4,3,3,7,5,4,False
-Koopa Clown,3,4,3,3,2,3,4,4,3,3,7,5,3,False
-Master Cycle Zero,3,4,3,3,2,3,4,4,3,3,7,5,3,False
+Master Cycle Zero | Koopa Clown,3,4,3,3,2,3,4,4,3,3,7,5,3,False
 300 SL Roader,3,3,3,3,4,2,3,2,3,3,3,5,4,False
-Standard Kart,3,3,3,3,4,2,3,2,3,3,3,5,3,False
-The Duke,3,3,3,3,4,2,3,2,3,3,3,5,3,False
+The Duke | Standard Kart,3,3,3,3,4,2,3,2,3,3,3,5,3,False
 Blue Falcon,4,2,3,4,3,0,2,3,1,5,3,4,4,False
 Splat Buggy,4,2,3,4,3,0,2,3,1,5,3,4,3,False
 Prancer,4,3,3,3,2,1,3,3,3,2,2,4,5,False
-Sport Bike,4,3,3,3,2,1,3,3,3,2,2,4,3,True
-Jet Bike,4,3,3,3,2,1,3,3,3,2,2,4,3,True
+Jet Bike | Sport Bike,4,3,3,3,2,1,3,3,3,2,2,4,3,True
 Sneeker,4,2,3,3,2,2,3,2,2,3,0,4,5,False
 Gold Standard,4,2,3,3,2,2,3,2,2,3,0,4,4,False
 Master Cycle,4,2,3,3,2,2,3,2,2,3,0,4,3,True
-Steel Driver,4,5,0,2,1,4,1,5,1,1,3,3,6,False
-Tri-Speeder,4,5,0,2,1,4,1,5,1,1,3,3,6,False
+Tri-Speeder | Steel Driver,4,5,0,2,1,4,1,5,1,1,3,3,6,False
 Bone Rattler,4,5,0,2,1,4,1,5,1,1,3,3,5,True
-Circuit Special,5,1,2,4,1,3,1,1,0,2,1,3,6,False
-B Dasher,5,1,2,4,1,3,1,1,0,2,1,3,6,False
-P-Wing,5,1,2,4,1,3,1,1,0,2,1,3,6,False
-Badwagon,5,2,1,3,0,4,0,1,0,1,5,3,7,False
-GLA,5,2,1,3,0,4,0,1,0,1,5,3,7,False
+P-Wing | B Dasher | Circuit Special,5,1,2,4,1,3,1,1,0,2,1,3,6,False
+GLA | Badwagon,5,2,1,3,0,4,0,1,0,1,5,3,7,False
 Standard ATV,5,2,1,3,0,4,0,1,0,1,5,3,6,False

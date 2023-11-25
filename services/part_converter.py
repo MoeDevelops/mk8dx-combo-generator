@@ -62,7 +62,7 @@ def get_bodies(file_path: str = "data/bodies.csv") -> List[Body]:
         traction = int(body_data[11])
         mini_turbo = int(body_data[12])
         invincibility = int(body_data[13])
-        is_inside_drift = bool(body_data[14])
+        is_inside_drift = body_data[14] == "True"
 
         body = Body(name,
                     TerrainStats(ground_speed, water_speed,

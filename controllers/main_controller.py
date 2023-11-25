@@ -31,6 +31,8 @@ class MainController:
 
         self.showing_combos = self.combos
 
+        print(f"Made {len(self.combos)} combos")
+
         self.create_table()
 
     def create_table(self):
