@@ -9,8 +9,8 @@ class MainView(tk.Frame):
         self.master = master
         self.pack()
 
-    def create_table(self, columns: List[str], data):
-        self.table = SortableTable(self, columns, data)
+    def create_table(self, columns: list[str], headings: list[str], data: []):
+        self.table = SortableTable(self, columns, headings, data)
         self.table.pack(fill="both", expand=True)
 
     def update_table(self, data):

@@ -1,6 +1,5 @@
 import asyncio
-from concurrent.futures import ThreadPoolExecutor
-from typing import List
+import inspect
 from models.kart_combo import KartCombo
 from services.part_converter import get_bodies, get_drivers, get_gliders, get_tires
 from views.main_view import MainView
@@ -9,8 +8,8 @@ from views.main_view import MainView
 class MainController:
     def __init__(self, main_view: MainView):
         self.main_view = main_view
-        self.combos: List[KartCombo] = []
-        self.showing_combos: List[KartCombo] = []
+        self.combos: list[KartCombo] = []
+        self.showing_combos: list[KartCombo] = []
         asyncio.run(self.fetch_data())
 
     async def fetch_data(self):
@@ -36,20 +35,13 @@ class MainController:
         self.create_table()
 
     def create_table(self):
-        self.main_view.create_table(["Name",
-                                     "Ground-Speed",
-                                     "Water-Speed",
-                                     "Air-Speed",
-                                     "Anti-Gravity-Speed",
-                                     "Acceleration",
-                                     "Weight",
-                                     "Ground-Handling",
-                                     "Water-Handling",
-                                     "Air-Handling",
-                                     "Anti-Gravity-Handling",
-                                     "Traction",
-                                     "Mini-Turbo",
-                                     "Invincibility",
-                                     "Inward drift",
-                                     "Vehicle size"],
-                                    self.showing_combos)
+        self.main_view.create_table(
+            [name for name in KartCombo.__dict__
+             if isinstance(getattr(KartCombo, name), property)],
+            ["Name",
+             "Ground Speed", "Water Speed", "Air Speed", "Anti-Gravity Speed",
+             "Acceleration", "Weight",
+             "Ground Handling", "Water Handling", "Air Handling", "Anti-Gravity Handling",
+             "Traction", "Mini-Turbo", "Invincibility", "Inward drifing", "Vehicle Size"],
+            self.showing_combos
+        )

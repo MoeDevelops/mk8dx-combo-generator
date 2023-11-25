@@ -81,6 +81,3 @@ class KartCombo:
     @property
     def vehicle_size(self):
         return self.driver.vehicle_size
-
-    def __str__(self):
-        return f"{self.name};{self.ground_speed};{self.water_speed};{self.air_speed};{self.anti_gravity_speed};{self.acceleration};{self.weight};{self.ground_handling};{self.water_handling};{self.air_handling};{self.anti_gravity_handling};{self.traction};{self.mini_turbo};{self.invincibility};{self.is_inward_drift};{self.vehicle_size.value}"

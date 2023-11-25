@@ -2,38 +2,47 @@ from tkinter import ttk
 
 
 class SortableTable(ttk.Treeview):
-    def __init__(self, master=None, columns=(), data_list=[]):
-        super().__init__(master, columns=columns, show="headings")
+    def __init__(self, master, attributes: list[str], headings: list[str], items: list[any]):
+        super().__init__(master, columns=attributes, show="headings")
+        self.columns = attributes
+        self.sort_column = None
+        self.sort_order = False  # False = asc, True = desc
 
-        self.columns = columns
-        self.data_list = data_list
+        if len(attributes) != len(headings):
+            raise ValueError(
+                "Attributes and headings don't have the same length")
 
-        self.setup_columns()
-        self.populate_table()
+        for i in range(len(attributes)):
+            column = attributes[i]
+            heading = headings[i]
+            self.heading(column, text=heading,
+                         command=lambda col=column: self.sort_by(col))
+            self.column(column, width=100, anchor="center")
 
-    def setup_columns(self):
-        for col in self.columns:
-            self.heading(
-                col, text=col, command=lambda c=col: self.sort_column(c, False))
-            self.column(col, anchor="center", width=100)
+        self.update_items(items)
 
-    def sort_column(self, col, reverse):
-        data = [(self.set(child, col), child)
-                for child in self.get_children("")]
-        data.sort(reverse=reverse)
+    def update_items(self, items: list[any]):
+        self.items = items
+        self.update_table()
 
-        for index, item in enumerate(data):
-            self.move(item[1], "", index)
+    def update_table(self):
+        if self.sort_column is not None:
+            self.items.sort(key=lambda item: getattr(
+                item, self.sort_column, None), reverse=self.sort_order)
 
-        self.heading(col, command=lambda: self.sort_column(col, not reverse))
+        self.delete(*self.get_children())
 
-    def populate_table(self):
-        for item in self.data_list:
-            self.insert("", "end", values=str(item).split(";"))
+        for item in self.items:
+            values = [getattr(item, attribute, None)
+                      for attribute in self.columns]
+            self.insert("", "end", values=values)
 
-    def update_table(self, new_data):
-        for child in self.get_children(""):
-            self.delete(child)
+    def sort_by(self, column):
+        if self.sort_column == column:
+            self.sort_order = not self.sort_order
+        else:
+            self.sort_order = False
 
-        self.data_list = new_data
-        self.populate_table()
+        self.sort_column = column
+
+        self.update_table()
