@@ -19,3 +19,8 @@ for driver in drivers:
                 combos.append(KartCombo(driver, body, tire, glider))
 
 print(f"{len(combos)} combos created.")
+
+for i in range(100):
+    combo = combos[i]
+
+    print(f"{combo.stats.name}")

@@ -19,3 +19,19 @@ class Stats:
         self.handling = handling
         self.traction = traction
         self.mini_turbo = mini_turbo
+        self.invincibility = invincibility
+
+    def __add__(self, other):
+        if isinstance(other, Stats) == False:
+            raise ValueError("Unsupported operand type for +")
+
+        other: Stats = other
+
+        return Stats(self.name + ", " + other.name,
+                     self.speed + other.speed,
+                     self.acceleration + other.acceleration,
+                     self.weight + other.weight,
+                     self.handling + other.handling,
+                     self.traction + other.traction,
+                     self.mini_turbo + other.mini_turbo,
+                     self.invincibility + other.invincibility)
