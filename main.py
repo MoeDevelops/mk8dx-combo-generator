@@ -1,26 +1,15 @@
-from typing import List
-from models.kart_combo import KartCombo
-from services.part_converter import get_drivers, get_bodies, get_gliders, get_tires
+from tkinter import Tk
+from controllers.main_controller import MainController
+from views.main_view import MainView
 
 
-drivers = get_drivers()
-bodies = get_bodies()
-gliders = get_gliders()
-tires = get_tires()
+if __name__ == "__main__":
+    root = Tk()
 
-combos: List[KartCombo] = []
+    root.geometry("1600x800")
+    root.title("Mario Kart 8 Deluxe Combo Generator")
 
-print("Read files. Creating combos.")
+    main_view = MainView(root)
+    main_controller = MainController(main_view)
 
-for driver in drivers:
-    for body in bodies:
-        for tire in tires:
-            for glider in gliders:
-                combos.append(KartCombo(driver, body, tire, glider))
-
-print(f"{len(combos)} combos created.")
-
-for i in range(100):
-    combo = combos[i]
-
-    print(f"{combo.stats.name}")
+    root.mainloop()
