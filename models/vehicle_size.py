@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class VehilceSize(Enum):
-    Small = 1
-    Medium = 2
-    Large = 3
+class VehicleSize(Enum):
+    SMALL = "Small"
+    MEDIUM = "Medium"
+    LARGE = "Large"

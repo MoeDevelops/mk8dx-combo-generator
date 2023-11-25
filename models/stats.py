@@ -1,7 +1,8 @@
-from terrain_stats import TerrainStats
+from models.terrain_stats import TerrainStats
 
 
 class Stats:
+    name: str
     speed: TerrainStats
     acceleration: int
     weight: int
@@ -10,7 +11,8 @@ class Stats:
     mini_turbo: int
     invincibility: int
 
-    def __init__(self, speed: TerrainStats, acceleration: int, weight: int, handling: TerrainStats, traction: int, mini_turbo: int, invincibility: int):
+    def __init__(self, name: str, speed: TerrainStats, acceleration: int, weight: int, handling: TerrainStats, traction: int, mini_turbo: int, invincibility: int):
+        self.name = name
         self.speed = speed
         self.acceleration = acceleration
         self.weight = weight
