@@ -1,1 +1,52 @@
 Name,GroundSpeed,WaterSpeed,AirSpeed,AntiGravitySpeed,Acceleration,Weight,GroundHandling,WaterHandling,AirHandling,AntiGravityHandling,Traction,MiniTurbo,Invincibility,VehicleSize
+Baby Peach,1,1,1,1,4,0,10,10,10,10,5,5,6,Small
+Baby Daisy,1,1,1,1,4,0,10,10,10,10,5,5,6,Small
+Baby Rosalina,1,1,1,1,5,0,9,9,9,9,3,5,6,Small
+Lemmy,1,1,1,1,5,0,9,9,9,9,3,5,6,Small
+Baby Mario,2,2,2,2,5,1,8,8,8,8,4,5,5,Small
+Baby Luigi,2,2,2,2,5,1,8,8,8,8,4,5,5,Small
+Dry Bones,2,2,2,2,5,1,8,8,8,8,4,5,5,Small
+Mii (Small),2,2,2,2,5,1,8,8,8,8,4,5,5,Small
+Koopa,3,3,3,3,4,2,8,8,8,8,5,4,4,Small
+Lakitu,3,3,3,3,4,2,8,8,8,8,5,4,4,Small
+Bowser Jr.,3,3,3,3,4,2,8,8,8,8,5,4,4,Small
+Toadette,3,3,3,3,5,2,7,7,7,7,2,4,3,Small
+Wendy,3,3,3,3,5,2,7,7,7,7,2,4,3,Small
+Isabelle,3,3,3,3,5,2,7,7,7,7,2,4,3,Small
+Toad,4,4,4,4,4,3,7,7,7,7,4,4,3,Small
+Shyguy,4,4,4,4,4,3,7,7,7,7,4,4,3,Small
+Larry,4,4,4,4,4,3,7,7,7,7,4,4,3,Small
+Cat Peach,5,5,5,5,4,3,6,6,6,6,3,4,3,Medium
+Inkling (Female),5,5,5,5,4,3,6,6,6,6,3,4,3,Medium
+Villager (Female),5,5,5,5,4,3,6,6,6,6,3,4,3,Medium
+Diddy Kong,5,5,5,5,4,3,6,6,6,6,3,4,3,Medium
+Peach,6,6,6,6,3,4,5,5,5,5,3,4,1,Medium
+Daisy,6,6,6,6,3,4,5,5,5,5,3,4,1,Medium
+Birdo,6,6,6,6,3,4,5,5,5,5,3,4,1,Medium
+Yoshi,6,6,6,6,3,4,5,5,5,5,3,4,1,Medium
+Peachette,6,6,6,6,3,4,5,5,5,5,3,4,1,Medium
+Tanooki Mario,6,6,6,6,3,5,5,5,5,5,1,4,1, Medium
+Inkling (Male),6,6,6,6,3,5,5,5,5,5,1,4,1, Medium
+Villager (Male),6,6,6,6,3,5,5,5,5,5,1,4,1, Medium
+Luigi,7,7,7,7,2,6,5,5,5,5,1,3,3,Medium
+Iggy,7,7,7,7,2,6,5,5,5,5,1,3,3,Medium
+Kamek,7,7,7,7,2,6,5,5,5,5,1,3,3,Medium
+Mario,7,7,7,7,2,6,4,4,4,4,2,3,3,Medium
+Ludwig,7,7,7,7,2,6,4,4,4,4,2,3,3,Medium
+Mii (Medium),7,7,7,7,2,6,4,4,4,4,2,3,3,Medium
+Metal Mario,8,8,8,8,1,10,3,3,3,3,1,1,3,Medium
+Wiggler,9,9,9,9,1,8,2,2,2,2,0,1,4,Medium
+Rosalina,8,8,8,8,1,7,3,3,3,3,3,2,4,Large
+King Boo,8,8,8,8,1,7,3,3,3,3,3,2,4,Large
+Link,8,8,8,8,1,7,3,3,3,3,3,2,4,Large
+Pauline,8,8,8,8,1,7,3,3,3,3,3,2,4,Large
+Petey Piranha,8,8,8,8,1,10,3,3,3,3,1,1,6,Large
+Waluigi,9,9,9,9,1,8,2,2,2,2,0,1,4,Large
+Donkey Kong,9,9,9,9,1,8,2,2,2,2,0,1,4,Large
+Roy,9,9,9,9,1,8,2,2,2,2,0,1,4,Large
+Wario,10,10,10,10,0,9,1,1,1,1,1,0,5,Large
+Dry Bowser,10,10,10,10,0,9,1,1,1,1,1,0,5,Large
+Funky Kong,10,10,10,10,0,9,1,1,1,1,1,0,5,Large
+Mii (Large),10,10,10,10,0,9,1,1,1,1,1,0,5,Large
+Bowser,10,10,10,10,0,10,0,0,0,0,0,0,6,Large
+Morton,10,10,10,10,0,10,0,0,0,0,0,0,6,Large
