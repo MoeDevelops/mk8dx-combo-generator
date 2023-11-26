@@ -1,7 +1,6 @@
 from models.driver import Driver
 from models.body import Body
 from models.stats import Stats
-from models.terrain_stats import TerrainStats
 
 
 class KartCombo:

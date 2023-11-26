@@ -1,6 +1,6 @@
 import asyncio
-from os import path
 import time
+import tkinter
 from models.kart_combo import KartCombo
 from services.part_converter import *
 from views.main_view import MainView
@@ -12,7 +12,72 @@ class MainController:
         self.main_view = main_view
         self.combos: list[KartCombo] = []
         self.showing_combos: list[KartCombo] = []
+        self.filter_dict: dict[str, tkinter.StringVar] = {}
+
+        self.kart_attributes = [name for name, value in KartCombo.__dict__.items()
+                                if isinstance(value, property)]
+        self.kart_attribute_names = ["Name",
+                                     "Ground Speed", "Water Speed",
+                                     "Air Speed", "Anti-Gravity Speed",
+                                     "Acceleration", "Weight",
+                                     "Ground Handling", "Water Handling",
+                                     "Air Handling", "Anti-Gravity Handling",
+                                     "Traction", "Mini-Turbo", "Invincibility",
+                                     "Inward drifing", "Vehicle Size"]
+
+        self.create_filters()
+
+        self.create_button()
+
         asyncio.run(self.fetch_data())
+
+    def create_filters(self):
+        for attribute_name in self.kart_attribute_names:
+            if (attribute_name == "Name"):
+                continue
+
+            for min_or_max in ["Min. ", "Max. "]:
+                self.add_filter(attribute_name, min_or_max)
+
+    def add_filter(self, attribute_name, min_or_max):
+        if min_or_max == "Min. ":
+            value = "0"
+            column = 0
+        else:
+            value = "20"
+            column = 2
+
+        name = min_or_max + attribute_name
+
+        filter_var = tkinter.StringVar()
+        filter_var.set(value)
+        self.filter_dict[name] = filter_var
+
+        self.main_view.create_filter(name,
+                                     self.filter_dict[name],
+                                     self.kart_attribute_names
+                                     .index(attribute_name) - 1,
+                                     column)
+
+    def create_button(self):
+        self.main_view.create_button("Filter", self.filter_list)
+
+    def filter_list(self):
+        self.main_view.update_table(self.showing_combos)
+
+        for i in range(len(self.kart_attributes)):
+            if self.kart_attribute_names[i] == "name":
+                continue
+
+            for min_or_max in ["Min. ", "Max. "]:
+                current_value = self.filter_dict[min_or_max +
+                                                 self.kart_attribute_names[i]].get()
+
+                try:
+                    int(current_value)
+                except:
+                    # TODO: add response
+                    break
 
     async def fetch_data(self):
         load_start = time.perf_counter_ns()
@@ -56,12 +121,7 @@ class MainController:
 
     def create_table(self):
         self.main_view.create_table(
-            [name for name in KartCombo.__dict__
-             if isinstance(getattr(KartCombo, name), property)],
-            ["Name",
-             "Ground Speed", "Water Speed", "Air Speed", "Anti-Gravity Speed",
-             "Acceleration", "Weight",
-             "Ground Handling", "Water Handling", "Air Handling", "Anti-Gravity Handling",
-             "Traction", "Mini-Turbo", "Invincibility", "Inward drifing", "Vehicle Size"],
+            self.kart_attributes,
+            self.kart_attribute_names,
             self.showing_combos
         )
