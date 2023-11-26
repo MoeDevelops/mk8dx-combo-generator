@@ -28,4 +28,4 @@ class MainView(tk.Frame):
         button.grid(columnspan=4)
 
     def update_table(self, data):
-        self.table.update_table(data)
+        self.table.update_items(data)

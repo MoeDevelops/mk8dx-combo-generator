@@ -23,7 +23,7 @@ class MainController:
                                      "Ground Handling", "Water Handling",
                                      "Air Handling", "Anti-Gravity Handling",
                                      "Traction", "Mini-Turbo", "Invincibility",
-                                     "Inward drifing", "Vehicle Size"]
+                                     "Inward drifting", "Vehicle Size"]
 
         self.create_filters()
 
@@ -33,7 +33,9 @@ class MainController:
 
     def create_filters(self):
         for attribute_name in self.kart_attribute_names:
-            if (attribute_name == "Name"):
+            if (attribute_name == "Name"
+                    or attribute_name == "Inward drifting"
+                    or attribute_name == "Vehicle Size"):
                 continue
 
             for min_or_max in ["Min. ", "Max. "]:
@@ -63,21 +65,41 @@ class MainController:
         self.main_view.create_button("Filter", self.filter_list)
 
     def filter_list(self):
+        new_combos: list[KartCombo] = []
+
+        for combo in self.combos:
+            if self.filter_combo(combo):
+                new_combos.append(combo)
+
+        print(f"Filtered {len(new_combos)} combos")
+
+        self.showing_combos = new_combos
+
         self.main_view.update_table(self.showing_combos)
 
+    def filter_combo(self, combo: KartCombo):
         for i in range(len(self.kart_attributes)):
-            if self.kart_attribute_names[i] == "name":
-                continue
-
+            attribute = self.kart_attributes[i]
+            attribute_name = self.kart_attribute_names[i]
             for min_or_max in ["Min. ", "Max. "]:
-                current_value = self.filter_dict[min_or_max +
-                                                 self.kart_attribute_names[i]].get()
-
                 try:
-                    int(current_value)
+                    current_value = self.filter_dict[min_or_max +
+                                                     attribute_name].get()
                 except:
-                    # TODO: add response
-                    break
+                    continue
+
+                current_attribute = getattr(combo, attribute)
+
+                if isinstance(current_attribute, int):
+                    current_value = int(current_value)
+                    if min_or_max == "Max. ":
+                        if current_attribute > current_value:
+                            return False
+                    else:
+                        if current_attribute < current_value:
+                            return False
+
+        return True
 
     async def fetch_data(self):
         load_start = time.perf_counter_ns()
