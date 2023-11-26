@@ -1,4 +1,5 @@
 from tkinter import ttk
+import tkinter as tk
 
 
 class SortableTable(ttk.Treeview):
@@ -6,6 +7,8 @@ class SortableTable(ttk.Treeview):
         super().__init__(master, columns=attributes, show="headings")
         self.columns = attributes
         self.sort_column = None
+        self.selected_cell: tk.StringVar = tk.StringVar(
+            value="Nothing selected")
         self.sort_order = False  # False = asc, True = desc
 
         if len(attributes) != len(headings):
@@ -20,6 +23,15 @@ class SortableTable(ttk.Treeview):
             self.column(column, width=100, anchor="center")
 
         self.update_items(items)
+        self.bind("<<TreeviewSelect>>", self.on_select)
+
+    def on_select(self, _):
+        selected_item = self.selection()
+
+        if selected_item:
+            values = self.item(selected_item)['values']
+
+            self.selected_cell.set(str(values))
 
     def update_items(self, items: list[any]):
         self.items = items

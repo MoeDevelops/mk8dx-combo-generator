@@ -27,5 +27,10 @@ class MainView(tk.Frame):
         button = tk.Button(master=self, text=text, command=command)
         button.grid(columnspan=4)
 
+    def create_selected_labal(self):
+        entry = tk.Entry(self, textvariable=self.table.selected_cell,
+                         width=200, state="readonly")
+        entry.grid(columnspan=4)
+
     def update_table(self, data):
         self.table.update_items(data)

@@ -140,6 +140,7 @@ class MainController:
         print(f"Made {len(self.combos)} combos in {ms}ms")
 
         self.create_table()
+        self.main_view.create_selected_labal()
 
     def create_table(self):
         self.main_view.create_table(
