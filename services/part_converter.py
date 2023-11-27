@@ -1,10 +1,6 @@
 from typing import List
 from services.csv_reader import read_csv
-from models.body import Body
-from models.driver import Driver
-from models.stats import Stats
-from models.terrain_stats import TerrainStats
-from models.vehicle_size import VehicleSize
+from models import Body, Driver, Stats, TerrainStats, VehicleSize
 
 
 def get_drivers(file_path: str = "data/drivers.csv") -> List[Driver]:

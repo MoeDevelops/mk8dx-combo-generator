@@ -1,6 +1,6 @@
 from tkinter import Tk
-from controllers.main_controller import MainController
-from views.main_view import MainView
+from controllers import MainController
+from views import MainView
 
 
 if __name__ == "__main__":

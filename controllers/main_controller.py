@@ -1,10 +1,9 @@
 import asyncio
 import time
 import tkinter
-from models.kart_combo import KartCombo
-from services.part_converter import *
-from views.main_view import MainView
-from services.cache_manager import *
+from models import KartCombo
+from services import *
+from views import MainView
 
 
 class MainController:
@@ -27,7 +26,8 @@ class MainController:
 
         self.create_filters()
 
-        self.create_button()
+        self.main_view.create_button("Filter", self.filter_list)
+        self.main_view.create_button("Clear cache", delete_cache)
 
         asyncio.run(self.fetch_data())
 
@@ -60,9 +60,6 @@ class MainController:
                                      self.kart_attribute_names
                                      .index(attribute_name) - 1,
                                      column)
-
-    def create_button(self):
-        self.main_view.create_button("Filter", self.filter_list)
 
     def filter_list(self):
         new_combos: list[KartCombo] = []

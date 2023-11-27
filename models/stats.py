@@ -27,7 +27,7 @@ class Stats:
 
         other: Stats = other
 
-        return Stats(self.name + ", " + other.name,
+        return Stats(self.name + " & " + other.name,
                      self.speed + other.speed,
                      self.acceleration + other.acceleration,
                      self.weight + other.weight,

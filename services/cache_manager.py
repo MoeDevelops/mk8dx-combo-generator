@@ -1,6 +1,6 @@
 import pickle
 import os
-from models.kart_combo import KartCombo
+from models import KartCombo
 
 cache_path = "data/cache.pickle"
 
