@@ -1,5 +1,9 @@
 # Cache
 cache.pickle
+bodies.csv
+drivers.csv
+tires.csv
+gliders.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
