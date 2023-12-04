@@ -1,9 +1,13 @@
 from tkinter import Tk
 from controllers import MainController
 from views import MainView
+import organiser
 
 
-if __name__ == "__main__":
+def main():
+    if not organiser.files_exist():
+        organiser.main()
+
     root = Tk()
 
     root.geometry("1800x900")
@@ -13,3 +17,7 @@ if __name__ == "__main__":
     main_controller = MainController(main_view)
 
     root.mainloop()
+
+
+if __name__ == "__main__":
+    main()
